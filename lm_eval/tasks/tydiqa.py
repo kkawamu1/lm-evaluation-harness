@@ -7,7 +7,8 @@ Paper: https://arxiv.org/abs/2003.05002
 Homepage: https://ai.google.com/research/tydiqa
 """
 
-from lm_eval.base import PromptSourceTask
+from lm_eval.base import PromptSourceTask, mean
+from transformers.data.metrics.squad_metrics import compute_exact, compute_f1
 
 _CITATION = """
 @article{tydiqa,
