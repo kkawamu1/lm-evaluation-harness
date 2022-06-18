@@ -51,7 +51,7 @@ class TyDiQAPrimary(PromptSourceTask):
         except:
             return True
         
-    class TyDiQASecondary(PromptSourceTask):
+class TyDiQASecondary(PromptSourceTask):
     VERSION = 1
     DATASET_PATH = "tydiqa"
     DATASET_NAME = "secondary_task"
