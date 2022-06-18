@@ -222,6 +222,7 @@ TASK_REGISTRY = {
     
     # TyDi QA
     "tydiqa_primary": tydiqa.TyDiQAPrimary,
+    "tydiqa_secondary": tydiqa.TyDiQASecondary
 }
 
 
