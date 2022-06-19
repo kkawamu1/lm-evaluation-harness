@@ -71,7 +71,12 @@ class TyDiQASecondary(PromptSourceTask):
         return agg([metric(t, pred) for t in targets])
 
     def process_results(self, doc, results):
-        # Based on PIAF's implementation
+        # Detect cases handled in superclass method
+        for metric in self.prompt.metadata.metrics:
+            if metric in CONFIGURED_RANKED_CHOICE_PS_METRICS | CONFIGURED_GENERATION_PS_METRICS:
+                return super().process_results(doc, results)
+        
+        # Otherwise implement SQuAD metric computations, based on PIAF's implementation
         targets = self.doc_to_target(doc)
         pred = results[0].strip()
         agg_exact_match = self.compute_score(targets, pred, compute_exact)
