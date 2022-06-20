@@ -221,8 +221,8 @@ TASK_REGISTRY = {
     "scitail": scitail.SciTailTE,
     
     # TyDi QA
-    "tydiqa_primary": tydiqa.TyDiQAPrimary,
-    "tydiqa_secondary": tydiqa.TyDiQASecondary
+    "tydiqa_primary": tydiqa.TyDiQAPrimaryClassification,
+    "tydiqa_secondary": tydiqa.TyDiQAGoldPGeneration
 }
 
 
