@@ -23,7 +23,7 @@ class TyDiQAPrimaryClassification(PromptSourceTask):
     """
     This task uses the primary_task dataset and implements the classification portion of the Minimal Answer Span task.
     """
-    VERSION = 1
+    VERSION = 0
     DATASET_PATH = "tydiqa"
     DATASET_NAME = "primary_task"
 
@@ -59,7 +59,7 @@ class TyDiQAGoldPGeneration(PromptSourceTask):
     """
     This task uses the Gold Passage (secondary_task) dataset and implements the Gold Passage task described in the paper, in addition to title and question generation tasks.
     """
-    VERSION = 1
+    VERSION = 0
     DATASET_PATH = "tydiqa"
     DATASET_NAME = "secondary_task"
 
