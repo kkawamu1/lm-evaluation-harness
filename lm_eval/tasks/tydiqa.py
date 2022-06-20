@@ -71,33 +71,48 @@ class TyDiQASecondary(PromptSourceTask):
         return agg([metric(t, pred) for t in targets])
 
     def process_results(self, doc, results):
-        # Detect cases handled in superclass method
-        for metric in self.prompt.metadata.metrics:
-            if metric in CONFIGURED_RANKED_CHOICE_PS_METRICS | CONFIGURED_GENERATION_PS_METRICS:
-                return super().process_results(doc, results)
-        
-        # Otherwise implement SQuAD metric computations, based on PIAF's implementation
         targets = self.doc_to_target(doc)
         pred = results[0].strip()
-        agg_exact_match = self.compute_score(targets, pred, compute_exact)
-        agg_f1 = self.compute_score(targets, pred, compute_f1)
-        
-        out = {"f1": agg_f1, 
-                "exact_match": agg_exact_match}
+        example = {"target": targets, "pred": pred}
+        out = {}
+
+        # Detect cases handled in superclass method
+        for metric in self.prompt.metadata.metrics:
+            if metric in self.CONFIGURED_RANKED_CHOICE_PS_METRICS | self.CONFIGURED_GENERATION_PS_METRICS:
+                if self.save_examples:
+                    super_out, super_example = super().process_results(doc, results)
+                    example.update(super_example)
+                else:
+                    super_out = super().process_results(doc, results)
+                out.update(super_out)
+            elif metric == "Squad":
+                # Otherwise implement SQuAD metric computations, based on PIAF's implementation
+                agg_exact_match = self.compute_score(targets, pred, compute_exact)
+                agg_f1 = self.compute_score(targets, pred, compute_f1)
+                out["f1"] = agg_f1
+                out["exact_match"] = agg_exact_match
 
         if self.save_examples:
-            example = {"target": targets, "pred": pred}
             return out, example
+
         return out
     
     def higher_is_better(self):
-        return {
-            "f1": True,
-            "exact_match": True,
-        }
+        out = {}
+        for metric in self.prompt.metadata.metrics:
+            if metric in self.CONFIGURED_RANKED_CHOICE_PS_METRICS | self.CONFIGURED_GENERATION_PS_METRICS:
+                out.update(super().higher_is_better())
+            elif metric == "Squad":
+                out["f1"] = True
+                out["exact_match"] = True
+        return out
 
     def aggregation(self):
-        return {
-            "f1": mean,
-            "exact_match": mean,
-        }
+        out = {}
+        for metric in self.prompt.metadata.metrics:
+            if metric in self.CONFIGURED_RANKED_CHOICE_PS_METRICS | self.CONFIGURED_GENERATION_PS_METRICS:
+                out.update(super().aggregation())
+            elif metric == "Squad":
+                out["f1"] = mean
+                out["exact_match"] = mean
+        return out
