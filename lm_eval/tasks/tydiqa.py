@@ -19,7 +19,7 @@ _CITATION = """
 }
 """
 
-class TyDiQACPrimaryClassification(PromptSourceTask):
+class TyDiQAPrimaryClassification(PromptSourceTask):
     """
     This task uses the primary_task dataset and implements the classification portion of the Minimal Answer Span task.
     """
