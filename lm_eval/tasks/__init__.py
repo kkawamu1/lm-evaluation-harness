@@ -1,6 +1,6 @@
 from promptsource.templates import DatasetTemplates
 from pprint import pprint
-from typing import List, Union
+from typing import List, Union, Mapping
 
 import lm_eval.base
 
@@ -261,51 +261,47 @@ def get_task_dict(task_name_list: List[Union[str, lm_eval.base.Task]]):
     return {**task_name_dict, **task_name_from_object_dict}
 
 
-def get_task_dict_promptsource(task_name_list: List[str]):
-    """Loads a task instance for each prompt written for that task."""
+def get_task_dict_promptsource(task_to_prompts: Mapping[str, List[str]]):
+    """
+    Loads a task instance for each prompt written for that task.
+    
+    :param task_to_prompts: A mapping from task name to a list of `promptsource`
+        template names for each task.
+        ```
+        task_to_prompts = {
+            'task_name_1': [<prompt_template_name_1>, <prompt_template_name_2>, ...],
+            'task_name_2': [<prompt_template_name_1>, <prompt_template_name_2>, ...],
+            ...
+        }
+        ```
+
+    Note: If the prompt name list of a task is empty, all prompts will be used.
+    """
     task_name_dict = {}
 
-    for task_name in task_name_list:
-        assert isinstance(task_name, str)
+    for task_name in task_to_prompts.keys():
+        assert isinstance(task_name, str) and isinstance(task_to_prompts[task_name], list)
 
-        # Static version of the Task Use this to get HF dataset path / name.
         static_task_obj = get_task(task_name)
-        if issubclass(static_task_obj, lm_eval.base.BioTask):
-            # Create the proper task name arg for DatasetTemplates.
-            sub_task = (
-                f"/{static_task_obj.DATASET_NAME}"
-                if static_task_obj.DATASET_NAME
-                else ""
-            )
-            ps_task_name = static_task_obj.DATASET_PATH.split("/")[-1] + "/"
-            ps_task_name += static_task_obj.DATASET_NAME
-
-            task_prompts = DatasetTemplates(ps_task_name)
-            for prompt_name in task_prompts.all_template_names:
-                prompt = task_prompts[prompt_name]
-                # NOTE: We choose a sep that can be easily split.
-                task_name_dict[f"{task_name}+{prompt_name}"] = get_task(task_name)(
-                    prompt=prompt
-                )
-        elif issubclass(static_task_obj, lm_eval.base.PromptSourceTask):
-            # Create the proper task name arg for DatasetTemplates.
-            sub_task = (
-                f"/{static_task_obj.DATASET_NAME}"
-                if static_task_obj.DATASET_NAME
-                else ""
-            )
-            ps_task_name = f"{static_task_obj.DATASET_PATH}{sub_task}"
-
-            task_prompts = DatasetTemplates(ps_task_name)
-            for prompt_name in task_prompts.all_template_names:
-                prompt = task_prompts[prompt_name]
-                # NOTE: We choose a sep that can be easily split.
-                task_name_dict[f"{task_name}+{prompt_name}"] = get_task(task_name)(
-                    prompt=prompt
-                )
-        
-        else:
-            # This is a task with a null prompt.
-            # Right now, the only use case are `PerplexityTask`s.
+        if not issubclass(static_task_obj, lm_eval.base.PromptSourceTask):
+            # This is a task with a null prompt, e.g. `PerplexityTask`s.
             task_name_dict[f"{task_name}+null"] = static_task_obj()
+            continue
+
+        # Use the static task to get HF dataset path / name and create the
+        # proper task name arg for DatasetTemplates.
+        ps_task_name = static_task_obj.DATASET_PATH.split("/")[-1] + "/"
+        ps_task_name += static_task_obj.DATASET_NAME
+        task_prompts = DatasetTemplates(ps_task_name)
+
+        prompt_names = task_to_prompts[task_name]
+        if not prompt_names:
+            prompt_names = task_prompts.all_template_names
+
+        for prompt_name in prompt_names:
+            prompt = task_prompts[prompt_name]
+            # NOTE: We choose a sep that can be easily split.
+            task_name_dict[f"{task_name}+{prompt_name}"] = get_task(task_name)(
+                prompt=prompt
+            )
     return task_name_dict

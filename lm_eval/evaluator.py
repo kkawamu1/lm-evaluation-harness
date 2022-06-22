@@ -17,7 +17,7 @@ import logging, json
 def simple_evaluate(
     model,
     model_args=None,
-    tasks=[],
+    tasks_to_prompts={},
     num_fewshot=0,
     batch_size=None,
     device=None,
@@ -35,8 +35,8 @@ def simple_evaluate(
     :param model_args: Optional[str]
         String arguments for each model class, see LM.create_from_arg_string.
         Ignored if `model` argument is a LM object.
-    :param tasks: list[Union[str, Task]]
-        List of task names or Task objects. Task objects will be taken to have name task.EVAL_HARNESS_NAME if defined and type(task).__name__ otherwise.
+    :param tasks_to_prompts: Mapping[str, list[str]]
+        Mapping from task name to list of prompt names.
     :param num_fewshot: int
         Number of examples in few-shot context
     :param batch_size: int, optional
@@ -59,7 +59,7 @@ def simple_evaluate(
         Dictionary of results
     """
     set_seed(seed)
-    assert tasks != [], "No tasks specified"
+    assert tasks_to_prompts != {}, "No tasks specified"
 
     if isinstance(model, str):
         if model_args is None:
@@ -82,10 +82,10 @@ def simple_evaluate(
             + ".db",
         )
 
-    task_dict = lm_eval.tasks.get_task_dict_promptsource(tasks)
+    task_dict = lm_eval.tasks.get_task_dict_promptsource(tasks_to_prompts)
 
     if check_integrity:
-        run_task_tests(task_list=tasks)
+        run_task_tests(task_list=task_dict.keys())
 
     results = evaluate(
         lm=lm,

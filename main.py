@@ -14,8 +14,8 @@ def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", required=True)
     parser.add_argument("--model_args", default="")
-    parser.add_argument("--tasks", default="all_tasks")
-    parser.add_argument("--provide_description", action="store_true")
+    parser.add_argument("--task", required=True)
+    parser.add_argument("--prompts", default="all_prompts")
     parser.add_argument("--num_fewshot", type=int, default=0)
     parser.add_argument("--seed", type=int, default=1234)
     parser.add_argument("--batch_size", type=int, default=None)
@@ -56,7 +56,7 @@ def args_to_name(args):
 
     fields = [
         _fix_model_name(args.model, args.model_args),
-        args.tasks,
+        args.task,
         str(args.num_fewshot),
         str(args.seed),
         datetime.datetime.now().isoformat(),
@@ -85,17 +85,16 @@ def setup_example_logger(output_path):
 def main():
     os.makedirs("./outputs", exist_ok=True)
     args = parse_args()
-    assert not args.provide_description  # not implemented
-
+    
     if args.limit:
         print(
             "WARNING: --limit SHOULD ONLY BE USED FOR TESTING. REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT."
         )
 
-    if args.tasks == "all_tasks":
-        task_names = tasks.ALL_TASKS
+    if args.prompts == "all_prompts":
+        prompt_names = []  # Use all prompt names in the task.
     else:
-        task_names = args.tasks.split(",")
+        prompt_names = args.prompts.split(",")
 
     description_dict = {}
     if args.description_dict_path:
@@ -109,7 +108,7 @@ def main():
         results = evaluator.simple_evaluate(
             model=args.model,
             model_args=args.model_args,
-            tasks=task_names,
+            tasks_to_prompts={args.task: prompt_names},
             num_fewshot=args.num_fewshot,
             batch_size=args.batch_size,
             device=args.device,
