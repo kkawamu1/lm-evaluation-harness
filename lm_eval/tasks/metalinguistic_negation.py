@@ -39,7 +39,7 @@ class MetalinguisticNegationBase(PromptSourceTask):
         return 64
 
 
-class MetalinguisticNegation(GEMXSUMBase):
+class MetalinguisticNegation(MetalinguisticNegationBase):
     """this is for train/validation/test"""
 
     SPLIT = ""
