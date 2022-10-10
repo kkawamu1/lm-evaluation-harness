@@ -34,6 +34,7 @@ from . import wino_bias
 from . import wmt
 from . import xquad
 from . import metalinguistic_negation
+from . import test2
 
 
 logger = logging.getLogger(__name__)
@@ -202,7 +203,9 @@ TASK_REGISTRY = {
     "tydiqa_primary": tydiqa.TyDiQAPrimaryClassification,
     "tydiqa_secondary": tydiqa.TyDiQAGoldPGeneration,
 
-    "metalinguistic_negation": metalinguistic_negation.MetalinguisticNegation
+    "metalinguistic_negation": metalinguistic_negation.MetalinguisticNegation,
+    "test_2_control_1_affirmative": test2.MetalinguisticNegationControl_1_Affirmative,
+    "test_2_control_1_negative": test2.MetalinguisticNegationControl_1_Negative,
     #######################################################
     # TODO: Not Yet Available in `promptsource/eval-hackathon`
     ########################################################
