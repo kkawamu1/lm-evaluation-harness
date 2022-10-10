@@ -10,7 +10,7 @@ _CITATION = """
 
 class MetalinguisticNegationBase(PromptSourceTask):
     VERSION = 0
-    DATASET_PATH = "kkawamu1/test2"
+    DATASET_PATH = "kkawamu1/test_2"
     DATASET_NAME = None
     SPLIT = None
 
