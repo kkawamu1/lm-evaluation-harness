@@ -50,23 +50,13 @@ class MetalinguisticNegationControl_1_Negative(MetalinguisticNegationBase):
 
     SPLIT = "control_1_negative"
 
-    def training_docs(self):
-        if self.has_training_docs():
-            return self.dataset["control_1_negative"]
-
     def test_docs(self):
-        if self.has_validation_docs():
-            return self.dataset["control_1_negative"]
+        return self.dataset["control_1_negative"]
 
 class MetalinguisticNegationControl_1_Affirmative(MetalinguisticNegationBase):
     """this is for control_1_affirmative"""
 
     SPLIT = "control_1_affirmative"
 
-    def training_docs(self):
-        if self.has_training_docs():
-            return self.dataset["control_1_affirmative"]
-
     def test_docs(self):
-        if self.has_validation_docs():
-            return self.dataset["control_1_affirmative"]
+        return self.dataset["control_1_affirmative"]
