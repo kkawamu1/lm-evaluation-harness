@@ -208,6 +208,7 @@ TASK_REGISTRY = {
     "test_2_control_1_negative": test2.MetalinguisticNegationControl_1_Negative,
     "test_2_control_2_affirmative": test2.MetalinguisticNegationControl_2_Affirmative,
     "test_2_control_2_negative": test2.MetalinguisticNegationControl_2_Negative,
+    "experimental_condition": test2.MetalinguisticNegationExp,
     #######################################################
     # TODO: Not Yet Available in `promptsource/eval-hackathon`
     ########################################################

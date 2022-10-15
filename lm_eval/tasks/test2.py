@@ -76,3 +76,11 @@ class MetalinguisticNegationControl_2_Affirmative(MetalinguisticNegationBase):
 
     def test_docs(self):
         return self.dataset["control_2_adjective_modification_affirmative"]
+
+class MetalinguisticNegationExp(MetalinguisticNegationBase):
+    """this is for experimental_condition"""
+
+    SPLIT = "experimental_condition"
+
+    def test_docs(self):
+        return self.dataset["experimental_condition"]
