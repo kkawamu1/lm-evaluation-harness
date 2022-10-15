@@ -60,3 +60,19 @@ class MetalinguisticNegationControl_1_Affirmative(MetalinguisticNegationBase):
 
     def test_docs(self):
         return self.dataset["control_1_affirmative"]
+
+class MetalinguisticNegationControl_2_Negative(MetalinguisticNegationBase):
+    """this is for control_2_adjective_modification_negative"""
+
+    SPLIT = "control_2_adjective_modification_negative"
+
+    def test_docs(self):
+        return self.dataset["control_2_adjective_modification_negative"]
+
+class MetalinguisticNegationControl_2_Affirmative(MetalinguisticNegationBase):
+    """this is for control_2_adjective_modification_affirmative"""
+
+    SPLIT = "control_2_adjective_modification_affirmative"
+
+    def test_docs(self):
+        return self.dataset["control_2_adjective_modification_affirmative"]
