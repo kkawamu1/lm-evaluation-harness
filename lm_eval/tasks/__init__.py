@@ -35,7 +35,7 @@ from . import wmt
 from . import xquad
 from . import metalinguistic_negation
 from . import test2
-
+from . import num_meta
 
 logger = logging.getLogger(__name__)
 
@@ -209,6 +209,9 @@ TASK_REGISTRY = {
     "test_2_control_2_affirmative": test2.MetalinguisticNegationControl_2_Affirmative,
     "test_2_control_2_negative": test2.MetalinguisticNegationControl_2_Negative,
     "experimental_condition": test2.MetalinguisticNegationExp,
+    "control_1_num": num_meta.MetalinguisticNegationControl_1,
+    "control_2_num": num_meta.MetalinguisticNegationControl_2,
+    "control_3_num": num_meta.MetalinguisticNegationControl_3,
     #######################################################
     # TODO: Not Yet Available in `promptsource/eval-hackathon`
     ########################################################
