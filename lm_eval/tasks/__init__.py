@@ -213,6 +213,7 @@ TASK_REGISTRY = {
     "control_2_num": num_meta.MetalinguisticNegationControl_2,
     "control_3_num": num_meta.MetalinguisticNegationControl_3,
     "control_4_num": num_meta.MetalinguisticNegationControl_4,
+    "control_5_num": num_meta.MetalinguisticNegationControl_5,
     #######################################################
     # TODO: Not Yet Available in `promptsource/eval-hackathon`
     ########################################################

@@ -77,3 +77,12 @@ class MetalinguisticNegationControl_4(MetalinguisticNegationBase):
 
     def test_docs(self):
         return self.dataset["control_4"]
+
+
+class MetalinguisticNegationControl_5(MetalinguisticNegationBase):
+    """this is for control_5"""
+
+    SPLIT = "control_5"
+
+    def test_docs(self):
+        return self.dataset["control_5"]
