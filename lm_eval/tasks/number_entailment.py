@@ -39,13 +39,13 @@ class NumEntailmentBase(PromptSourceTask):
         return 64
 
 
-class NumEntailment(MetalinguisticNegationBase):
+class NumEntailment(NumEntailmentBase):
     """this is for train/validation/test"""
 
     SPLIT = ""
 
 
-class NumEntailmentNegative(MetalinguisticNegationBase):
+class NumEntailmentNegative(NumEntailmentBase):
     """this is for negative"""
 
     SPLIT = "negative"
@@ -53,7 +53,7 @@ class NumEntailmentNegative(MetalinguisticNegationBase):
     def test_docs(self):
         return self.dataset["negative"]
 
-class NumEntailmentAffirmative(MetalinguisticNegationBase):
+class NumEntailmentAffirmative(NumEntailmentBase):
     """this is for affirmative"""
 
     SPLIT = "affirmative"
