@@ -36,6 +36,7 @@ from . import xquad
 from . import metalinguistic_negation
 from . import test2
 from . import num_meta
+from . import number_entailment
 
 logger = logging.getLogger(__name__)
 
@@ -214,6 +215,9 @@ TASK_REGISTRY = {
     "control_3_num": num_meta.MetalinguisticNegationControl_3,
     "control_4_num": num_meta.MetalinguisticNegationControl_4,
     "control_5_num": num_meta.MetalinguisticNegationControl_5,
+
+    "number_entailment_affirmative": number_entailment.NumEntailmentAffirmative,
+    "number_entailment_negative": number_entailment.NumEntailmentNegative,
     #######################################################
     # TODO: Not Yet Available in `promptsource/eval-hackathon`
     ########################################################
