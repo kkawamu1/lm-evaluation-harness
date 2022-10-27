@@ -218,6 +218,8 @@ TASK_REGISTRY = {
 
     "number_entailment_affirmative": number_entailment.NumEntailmentAffirmative,
     "number_entailment_negative": number_entailment.NumEntailmentNegative,
+    "number_entailment_more_than": number_entailment.NumEntailmentMoreThan,
+    "number_entailment_less_than": number_entailment.NumEntailmentLessThan,
     #######################################################
     # TODO: Not Yet Available in `promptsource/eval-hackathon`
     ########################################################

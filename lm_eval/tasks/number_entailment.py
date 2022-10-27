@@ -60,3 +60,19 @@ class NumEntailmentAffirmative(NumEntailmentBase):
 
     def test_docs(self):
         return self.dataset["affirmative"]
+
+class NumEntailmentMoreThan(NumEntailmentBase):
+    """this is for more than"""
+
+    SPLIT = "more_than"
+
+    def test_docs(self):
+        return self.dataset["more_than"]
+
+class NumEntailmentLessThan(NumEntailmentBase):
+    """this is for less than"""
+
+    SPLIT = "less_than"
+
+    def test_docs(self):
+        return self.dataset["less_than"]
