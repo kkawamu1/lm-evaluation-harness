@@ -146,6 +146,42 @@ class NumEntailmentAffirmativeSpelledOutExplicit(NumEntailmentBase):
 
     def test_docs(self):
         return self.dataset["affirmative_spelled_out_explicit"]
+####################at_least##############################
+
+class NumEntailmentNegativeAtLesast(NumEntailmentBase):
+    """this is for negative_at_least"""
+
+    SPLIT = "negative_at_least"
+
+    def test_docs(self):
+        return self.dataset["negative_at_least"]
+
+class NumEntailmentAffirmativeAtLesast(NumEntailmentBase):
+    """this is for affirmative_at_least"""
+
+    SPLIT = "affirmative_at_least"
+
+    def test_docs(self):
+        return self.dataset["affirmative_at_least"]
+
+
+class NumEntailmentNegativeSpelledOutAtLesast(NumEntailmentBase):
+    """this is for negative_spelled_out_at_least"""
+
+    SPLIT = "negative_spelled_out_at_least"
+
+    def test_docs(self):
+        return self.dataset["negative_spelled_out_at_least"]
+
+
+class NumEntailmentAffirmativeSpelledOutAtLesast(NumEntailmentBase):
+    """this is for affirmative_spelled_out_at_least"""
+
+    SPLIT = "affirmative_spelled_out_at_least"
+
+    def test_docs(self):
+        return self.dataset["affirmative_spelled_out_at_least"]
+        
 
 ###################################################
 class NumEntailmentMoreThan(NumEntailmentBase):

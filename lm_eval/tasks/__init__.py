@@ -229,6 +229,12 @@ TASK_REGISTRY = {
     "number_entailment_negative_explicit": number_entailment.NumEntailmentNegativeExplicit,
     "number_entailment_affirmative_spelled_out_explicit": number_entailment.NumEntailmentAffirmativeSpelledOutExplicit,
     "number_entailment_negative_spelled_out_explicit": number_entailment.NumEntailmentNegativeSpelledOutExplicit,
+
+    "number_entailment_affirmative_at_least": number_entailment.NumEntailmentAffirmativeAtLesast,
+    "number_entailment_negative_at_least": number_entailment.NumEntailmentNegativeAtLesast,
+    "number_entailment_affirmative_spelled_out_at_least": number_entailment.NumEntailmentAffirmativeSpelledOutAtLesast,
+    "number_entailment_negative_spelled_out_at_least": number_entailment.NumEntailmentNegativeSpelledOutAtLesast,
+    
     # "number_entailment_more_than": number_entailment.NumEntailmentMoreThan,
     # "number_entailment_less_than": number_entailment.NumEntailmentLessThan,
     # "number_entailment_A_has": number_entailment.NumEntailmentAHas,
