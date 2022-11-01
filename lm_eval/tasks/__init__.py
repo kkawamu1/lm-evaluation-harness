@@ -218,8 +218,21 @@ TASK_REGISTRY = {
 
     "number_entailment_affirmative": number_entailment.NumEntailmentAffirmative,
     "number_entailment_negative": number_entailment.NumEntailmentNegative,
-    "number_entailment_more_than": number_entailment.NumEntailmentMoreThan,
-    "number_entailment_less_than": number_entailment.NumEntailmentLessThan,
+    "number_entailment_affirmative_2_999": number_entailment.NumEntailmentAffirmative2To999,
+    "number_entailment_negative_2_999": number_entailment.NumEntailmentNegative2To999,
+    "number_entailment_affirmative_spelled_out": number_entailment.NumEntailmentAffirmativeSpelledOut,
+    "number_entailment_negative_spelled_out": number_entailment.NumEntailmentNegativeSpelledOut,
+    "number_entailment_affirmative_2_999_spelled_out": number_entailment.NumEntailmentAffirmative2To999SpelledOut,
+    "number_entailment_negative_2_999_spelled_out": number_entailment.NumEntailmentNegative2To999SpelledOut,
+
+    "number_entailment_affirmative_explicit": number_entailment.NumEntailmentAffirmativeExplicit,
+    "number_entailment_negative_explicit": number_entailment.NumEntailmentNegativeExplicit,
+    "number_entailment_affirmative_spelled_out_explicit": number_entailment.NumEntailmentAffirmativeSpelledOutExplicit,
+    "number_entailment_negative_spelled_out_explicit": number_entailment.NumEntailmentNegativeSpelledOutExplicit,
+    # "number_entailment_more_than": number_entailment.NumEntailmentMoreThan,
+    # "number_entailment_less_than": number_entailment.NumEntailmentLessThan,
+    # "number_entailment_A_has": number_entailment.NumEntailmentAHas,
+    # "number_entailment_B_has": number_entailment.NumEntailmentBHas,
     #######################################################
     # TODO: Not Yet Available in `promptsource/eval-hackathon`
     ########################################################
