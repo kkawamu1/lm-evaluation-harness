@@ -45,212 +45,210 @@ class NumEntailment(NumEntailmentBase):
     SPLIT = ""
 
 
-class NumEntailmentNegative(NumEntailmentBase):
-    """this is for negative"""
-
-    SPLIT = "negative"
-
-    def test_docs(self):
-        return self.dataset["negative"]
-
-class NumEntailmentAffirmative(NumEntailmentBase):
-    """this is for affirmative"""
-
-    SPLIT = "affirmative"
-
-    def test_docs(self):
-        return self.dataset["affirmative"]
         
-class NumEntailmentNegative2To999(NumEntailmentBase):
-    """this is for negative_2_999"""
+class NumEntailmentNegative2To100(NumEntailmentBase):
+    """this is for negative_2_100"""
 
-    SPLIT = "negative_2_999"
-
-    def test_docs(self):
-        return self.dataset["negative_2_999"]
-
-class NumEntailmentAffirmative2To999(NumEntailmentBase):
-    """this is for affirmative_2_999"""
-
-    SPLIT = "affirmative_2_999"
+    SPLIT = "negative_2_100"
 
     def test_docs(self):
-        return self.dataset["affirmative_2_999"]
+        return self.dataset["negative_2_100"]
 
-## Spelled out ###
+class NumEntailmentAffirmative2To100(NumEntailmentBase):
+    """this is for affirmative_2_100"""
 
-class NumEntailmentNegativeSpelledOut(NumEntailmentBase):
-    """this is for negative_spelled_out"""
-
-    SPLIT = "negative_spelled_out"
+    SPLIT = "affirmative_2_100"
 
     def test_docs(self):
-        return self.dataset["negative_spelled_out"]
+        return self.dataset["affirmative_2_100"]
 
+class NumEntailmentNegative2To100SpelledOut(NumEntailmentBase):
+    """this is for negative_spelled_out_2_100"""
 
-class NumEntailmentAffirmativeSpelledOut(NumEntailmentBase):
-    """this is for affirmative_spelled_out"""
-
-    SPLIT = "affirmative_spelled_out"
-
-    def test_docs(self):
-        return self.dataset["affirmative_spelled_out"]
-        
-class NumEntailmentNegative2To999SpelledOut(NumEntailmentBase):
-    """this is for negative_2_999_spelled_out"""
-
-    SPLIT = "negative_2_999_spelled_out"
+    SPLIT = "negative_spelled_out_2_100"
 
     def test_docs(self):
-        return self.dataset["negative_2_999_spelled_out"]
+        return self.dataset["negative_spelled_out_2_100"]
 
-class NumEntailmentAffirmative2To999SpelledOut(NumEntailmentBase):
-    """this is for affirmative_2_999_spelled_out"""
+class NumEntailmentAffirmative2To100SpelledOut(NumEntailmentBase):
+    """this is for affirmative_2_100_spelled_out"""
 
-    SPLIT = "affirmative_2_999_spelled_out"
-
-    def test_docs(self):
-        return self.dataset["affirmative_2_999_spelled_out"]
-
-####################
-
-class NumEntailmentNegativeExplicit(NumEntailmentBase):
-    """this is for negative_explicit"""
-
-    SPLIT = "negative_explicit"
+    SPLIT = "affirmative_2_100_spelled_out"
 
     def test_docs(self):
-        return self.dataset["negative_explicit"]
+        return self.dataset["affirmative_spelled_out_2_100"]
 
-class NumEntailmentAffirmativeExplicit(NumEntailmentBase):
-    """this is for affirmative_explicit"""
 
-    SPLIT = "affirmative_explicit"
 
-    def test_docs(self):
-        return self.dataset["affirmative_explicit"]
+class NumEntailmentLessThan2To100(NumEntailmentBase):
+    """this is for less_than_2_100"""
 
-class NumEntailmentNegativeSpelledOutExplicit(NumEntailmentBase):
-    """this is for negative_spelled_out_explicit"""
-
-    SPLIT = "negative_spelled_out_explicit"
+    SPLIT = "less_than_2_100"
 
     def test_docs(self):
-        return self.dataset["negative_spelled_out_explicit"]
+        return self.dataset["less_than_2_100"]
 
+class NumEntailmentMoreThan2To100(NumEntailmentBase):
+    """this is for more_than_2_100"""
 
-class NumEntailmentAffirmativeSpelledOutExplicit(NumEntailmentBase):
-    """this is for affirmative_spelled_out_explicit"""
-
-    SPLIT = "affirmative_spelled_out_explicit"
-
-    def test_docs(self):
-        return self.dataset["affirmative_spelled_out_explicit"]
-
-
-###########################################################
-
-
-
-class NumEntailmentLessThanExplicit(NumEntailmentBase):
-    """this is for less_than_explicit"""
-
-    SPLIT = "less_than_explicit"
+    SPLIT = "more_than_2_100"
 
     def test_docs(self):
-        return self.dataset["less_than_explicit"]
+        return self.dataset["more_than_2_100"]
 
-class NumEntailmentMoreThanExplicit(NumEntailmentBase):
-    """this is for more_than_explicit"""
+class NumEntailmentLessThan2To100SpelledOut(NumEntailmentBase):
+    """this is for less_than_spelled_2_100"""
 
-    SPLIT = "more_than_explicit"
-
-    def test_docs(self):
-        return self.dataset["more_than_explicit"]
-
-class NumEntailmentLessThanSpelledOutExplicit(NumEntailmentBase):
-    """this is for less_than_spelled_out_explicit"""
-
-    SPLIT = "less_than_spelled_out_explicit"
+    SPLIT = "less_than_spelled_out_2_100"
 
     def test_docs(self):
-        return self.dataset["less_than_spelled_out_explicit"]
+        return self.dataset["less_than_spelled_out_2_100"]
 
 
-class NumEntailmentMoreThanSpelledOutExplicit(NumEntailmentBase):
-    """this is for more_than_spelled_out_explicit"""
+class NumEntailmentMoreThan2To100SpelledOut(NumEntailmentBase):
+    """this is for more_than_spelled_out_2_100"""
 
-    SPLIT = "more_than_spelled_out_explicit"
-
-    def test_docs(self):
-        return self.dataset["more_than_spelled_out_explicit"]
-
-####################at_least##############################
-
-class NumEntailmentNegativeAtLesast(NumEntailmentBase):
-    """this is for negative_at_least"""
-
-    SPLIT = "negative_at_least"
+    SPLIT = "more_than_spelled_out_2_100"
 
     def test_docs(self):
-        return self.dataset["negative_at_least"]
+        return self.dataset["more_than_spelled_out_explicit_2_100"]
 
-class NumEntailmentAffirmativeAtLesast(NumEntailmentBase):
-    """this is for affirmative_at_least"""
+#########################################################################
 
-    SPLIT = "affirmative_at_least"
+class NumEntailmentNegative100To999(NumEntailmentBase):
+    """this is for negative_100_999"""
 
-    def test_docs(self):
-        return self.dataset["affirmative_at_least"]
-
-
-class NumEntailmentNegativeSpelledOutAtLesast(NumEntailmentBase):
-    """this is for negative_spelled_out_at_least"""
-
-    SPLIT = "negative_spelled_out_at_least"
+    SPLIT = "negative_100_999"
 
     def test_docs(self):
-        return self.dataset["negative_spelled_out_at_least"]
+        return self.dataset["negative_100_999"]
 
+class NumEntailmentAffirmative100To999(NumEntailmentBase):
+    """this is for affirmative_100_999"""
 
-class NumEntailmentAffirmativeSpelledOutAtLesast(NumEntailmentBase):
-    """this is for affirmative_spelled_out_at_least"""
-
-    SPLIT = "affirmative_spelled_out_at_least"
-
-    def test_docs(self):
-        return self.dataset["affirmative_spelled_out_at_least"]
-        
-
-###################################################
-class NumEntailmentMoreThan(NumEntailmentBase):
-    """this is for more than"""
-
-    SPLIT = "more_than"
+    SPLIT = "affirmative_100_999"
 
     def test_docs(self):
-        return self.dataset["more_than"]
+        return self.dataset["affirmative_100_999"]
 
-class NumEntailmentLessThan(NumEntailmentBase):
-    """this is for less than"""
+class NumEntailmentNegative100To999SpelledOut(NumEntailmentBase):
+    """this is for negative_spelled_out_100_999"""
 
-    SPLIT = "less_than"
-
-    def test_docs(self):
-        return self.dataset["less_than"]
-        
-class NumEntailmentAHas(NumEntailmentBase):
-    """this is for A_has"""
-
-    SPLIT = "A_has"
+    SPLIT = "negative_spelled_out_100_999"
 
     def test_docs(self):
-        return self.dataset["A_has"]
+        return self.dataset["negative_spelled_out_100_999"]
 
-class NumEntailmentBHas(NumEntailmentBase):
-    """this is for B_has"""
+class NumEntailmentAffirmative100To999SpelledOut(NumEntailmentBase):
+    """this is for affirmative_100_999_spelled_out"""
 
-    SPLIT = "B_has"
+    SPLIT = "affirmative_100_999_spelled_out"
 
     def test_docs(self):
-        return self.dataset["B_has"]
+        return self.dataset["affirmative_spelled_out_100_999"]
+
+
+
+class NumEntailmentLessThan100To999(NumEntailmentBase):
+    """this is for less_than_100_999"""
+
+    SPLIT = "less_than_100_999"
+
+    def test_docs(self):
+        return self.dataset["less_than_100_999"]
+
+class NumEntailmentMoreThan100To999(NumEntailmentBase):
+    """this is for more_than_100_999"""
+
+    SPLIT = "more_than_100_999"
+
+    def test_docs(self):
+        return self.dataset["more_than_100_999"]
+
+class NumEntailmentLessThan100To999SpelledOut(NumEntailmentBase):
+    """this is for less_than_spelled_100_999"""
+
+    SPLIT = "less_than_spelled_out_100_999"
+
+    def test_docs(self):
+        return self.dataset["less_than_spelled_out_100_999"]
+
+
+class NumEntailmentMoreThan100To999SpelledOut(NumEntailmentBase):
+    """this is for more_than_spelled_out_100_999"""
+
+    SPLIT = "more_than_spelled_out_100_999"
+
+    def test_docs(self):
+        return self.dataset["more_than_spelled_out_explicit_100_999"]
+
+
+
+#########################################################################
+
+class NumEntailmentNegative1000To10000(NumEntailmentBase):
+    """this is for negative_1000_10000"""
+
+    SPLIT = "negative_1000_10000"
+
+    def test_docs(self):
+        return self.dataset["negative_1000_10000"]
+
+class NumEntailmentAffirmative1000To10000(NumEntailmentBase):
+    """this is for affirmative_1000_10000"""
+
+    SPLIT = "affirmative_1000_10000"
+
+    def test_docs(self):
+        return self.dataset["affirmative_1000_10000"]
+
+class NumEntailmentNegative1000To10000SpelledOut(NumEntailmentBase):
+    """this is for negative_spelled_out_1000_10000"""
+
+    SPLIT = "negative_spelled_out_1000_10000"
+
+    def test_docs(self):
+        return self.dataset["negative_spelled_out_1000_10000"]
+
+class NumEntailmentAffirmative1000To10000SpelledOut(NumEntailmentBase):
+    """this is for affirmative_1000_10000_spelled_out"""
+
+    SPLIT = "affirmative_1000_10000_spelled_out"
+
+    def test_docs(self):
+        return self.dataset["affirmative_spelled_out_1000_10000"]
+
+
+
+class NumEntailmentLessThan1000To10000(NumEntailmentBase):
+    """this is for less_than_1000_10000"""
+
+    SPLIT = "less_than_1000_10000"
+
+    def test_docs(self):
+        return self.dataset["less_than_1000_10000"]
+
+class NumEntailmentMoreThan1000To10000(NumEntailmentBase):
+    """this is for more_than_1000_10000"""
+
+    SPLIT = "more_than_1000_10000"
+
+    def test_docs(self):
+        return self.dataset["more_than_1000_10000"]
+
+class NumEntailmentLessThan1000To10000SpelledOut(NumEntailmentBase):
+    """this is for less_than_spelled_1000_10000"""
+
+    SPLIT = "less_than_spelled_out_1000_10000"
+
+    def test_docs(self):
+        return self.dataset["less_than_spelled_out_1000_10000"]
+
+
+class NumEntailmentMoreThan1000To10000SpelledOut(NumEntailmentBase):
+    """this is for more_than_spelled_out_1000_10000"""
+
+    SPLIT = "more_than_spelled_out_1000_10000"
+
+    def test_docs(self):
+        return self.dataset["more_than_spelled_out_explicit_1000_10000"]
