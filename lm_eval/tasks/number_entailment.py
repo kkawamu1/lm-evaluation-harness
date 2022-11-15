@@ -44,10 +44,10 @@ class NumEntailment(NumEntailmentBase):
 
     SPLIT = ""
     def test_docs(self):
-        return self.dataset[SPLIT]
+        return self.dataset[self.SPLIT]
 types = ['fine_grained', 'coarse_grained']
 int_ranges = ['1_100', '1_1000', '1_10000']
-conditions = ['affirmative', 'affirmative_spelled_out', 'negative', 'negative_spelled', 'more_than', 'more_than_spelled_out', 'less_than', 'less_than_spelled_out']
+conditions = ['affirmative', 'affirmative_spelled_out', 'negative', 'negative_spelled_out', 'more_than', 'more_than_spelled_out', 'less_than', 'less_than_spelled_out']
 
 _URLS = {}
 for type in types:
