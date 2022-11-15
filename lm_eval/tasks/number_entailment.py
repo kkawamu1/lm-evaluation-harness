@@ -43,6 +43,24 @@ class NumEntailment(NumEntailmentBase):
     """this is for train/validation/test"""
 
     SPLIT = ""
+    def test_docs(self):
+        return self.dataset[SPLIT]
+types = ['fine_grained', 'coarse_grained']
+int_ranges = ['1_100', '1_1000', '1_10000']
+conditions = ['affirmative', 'affirmative_spelled_out', 'negative', 'negative_spelled', 'more_than', 'more_than_spelled_out', 'less_than', 'less_than_spelled_out']
+
+_URLS = {}
+for type in types:
+    for int_range in int_ranges:
+        for condition in conditions:
+            _URLS[f'{condition}_{int_range}_{type}'] = f'{condition}_{int_range}_{type}.jsonl'
+def construct_tasks():
+    tasks = {}
+    for task_name in _URLS:
+        a = NumEntailment
+        a.SPLIT = task_name
+        tasks[f"number_entailment_{task_name}"] = a
+    return tasks
 
 
         
@@ -111,7 +129,7 @@ class NumEntailmentMoreThan2To100SpelledOut(NumEntailmentBase):
     SPLIT = "more_than_spelled_out_2_100"
 
     def test_docs(self):
-        return self.dataset["more_than_spelled_out_explicit_2_100"]
+        return self.dataset["more_than_spelled_out_2_100"]
 
 #########################################################################
 
@@ -180,7 +198,7 @@ class NumEntailmentMoreThan100To999SpelledOut(NumEntailmentBase):
     SPLIT = "more_than_spelled_out_100_999"
 
     def test_docs(self):
-        return self.dataset["more_than_spelled_out_explicit_100_999"]
+        return self.dataset["more_than_spelled_out_100_999"]
 
 
 
@@ -251,4 +269,4 @@ class NumEntailmentMoreThan1000To10000SpelledOut(NumEntailmentBase):
     SPLIT = "more_than_spelled_out_1000_10000"
 
     def test_docs(self):
-        return self.dataset["more_than_spelled_out_explicit_1000_10000"]
+        return self.dataset["more_than_spelled_out_1000_10000"]

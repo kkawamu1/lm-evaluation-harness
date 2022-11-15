@@ -217,38 +217,38 @@ TASK_REGISTRY = {
     "control_5_num": num_meta.MetalinguisticNegationControl_5,
 
 
-    "number_entailment_affirmative_2_100": number_entailment.NumEntailmentAffirmative2To100,
-    "number_entailment_negative_2_100": number_entailment.NumEntailmentNegative2To100,
-    "number_entailment_affirmative_spelled_out_2_100": number_entailment.NumEntailmentAffirmative2To100SpelledOut,
-    "number_entailment_negative_spelled_out_2_100": number_entailment.NumEntailmentNegative2To100SpelledOut,
+    # "number_entailment_affirmative_2_100": number_entailment.NumEntailmentAffirmative2To100,
+    # "number_entailment_negative_2_100": number_entailment.NumEntailmentNegative2To100,
+    # "number_entailment_affirmative_spelled_out_2_100": number_entailment.NumEntailmentAffirmative2To100SpelledOut,
+    # "number_entailment_negative_spelled_out_2_100": number_entailment.NumEntailmentNegative2To100SpelledOut,
 
-    "number_entailment_more_than_2_100": number_entailment.NumEntailmentMoreThan2To100,
-    "number_entailment_less_than_2_100": number_entailment.NumEntailmentLessThan2To100,
-    "number_entailment_more_than_spelled_out_2_100": number_entailment.NumEntailmentMoreThan2To100SpelledOut,
-    "number_entailment_less_than_spelled_out_2_100": number_entailment.NumEntailmentLessThan2To100SpelledOut,
+    # "number_entailment_more_than_2_100": number_entailment.NumEntailmentMoreThan2To100,
+    # "number_entailment_less_than_2_100": number_entailment.NumEntailmentLessThan2To100,
+    # "number_entailment_more_than_spelled_out_2_100": number_entailment.NumEntailmentMoreThan2To100SpelledOut,
+    # "number_entailment_less_than_spelled_out_2_100": number_entailment.NumEntailmentLessThan2To100SpelledOut,
+
+    **number_entailment.construct_tasks(),
+    # "number_entailment_affirmative_100_999": number_entailment.NumEntailmentAffirmative100To999,
+    # "number_entailment_negative_100_999": number_entailment.NumEntailmentNegative100To999,
+    # "number_entailment_affirmative_spelled_out_100_999": number_entailment.NumEntailmentAffirmative100To999SpelledOut,
+    # "number_entailment_negative_spelled_out_100_999": number_entailment.NumEntailmentNegative100To999SpelledOut,
+
+    # "number_entailment_more_than_100_999": number_entailment.NumEntailmentMoreThan100To999,
+    # "number_entailment_less_than_100_999": number_entailment.NumEntailmentLessThan100To999,
+    # "number_entailment_more_than_spelled_out_100_999": number_entailment.NumEntailmentMoreThan100To999SpelledOut,
+    # "number_entailment_less_than_spelled_out_100_999": number_entailment.NumEntailmentLessThan100To999SpelledOut,
 
 
-    "number_entailment_affirmative_100_999": number_entailment.NumEntailmentAffirmative100To999,
-    "number_entailment_negative_100_999": number_entailment.NumEntailmentNegative100To999,
-    "number_entailment_affirmative_spelled_out_100_999": number_entailment.NumEntailmentAffirmative100To999SpelledOut,
-    "number_entailment_negative_spelled_out_100_999": number_entailment.NumEntailmentNegative100To999SpelledOut,
 
-    "number_entailment_more_than_100_999": number_entailment.NumEntailmentMoreThan100To999,
-    "number_entailment_less_than_100_999": number_entailment.NumEntailmentLessThan100To999,
-    "number_entailment_more_than_spelled_out_100_999": number_entailment.NumEntailmentMoreThan100To999SpelledOut,
-    "number_entailment_less_than_spelled_out_100_999": number_entailment.NumEntailmentLessThan100To999SpelledOut,
+    # "number_entailment_affirmative_1000_10000": number_entailment.NumEntailmentAffirmative1000To10000,
+    # "number_entailment_negative_1000_10000": number_entailment.NumEntailmentNegative1000To10000,
+    # "number_entailment_affirmative_spelled_out_1000_10000": number_entailment.NumEntailmentAffirmative1000To10000SpelledOut,
+    # "number_entailment_negative_spelled_out_1000_10000": number_entailment.NumEntailmentNegative1000To10000SpelledOut,
 
-
-
-    "number_entailment_affirmative_1000_10000": number_entailment.NumEntailmentAffirmative1000To10000,
-    "number_entailment_negative_1000_10000": number_entailment.NumEntailmentNegative1000To10000,
-    "number_entailment_affirmative_spelled_out_1000_10000": number_entailment.NumEntailmentAffirmative1000To10000SpelledOut,
-    "number_entailment_negative_spelled_out_1000_10000": number_entailment.NumEntailmentNegative1000To10000SpelledOut,
-
-    "number_entailment_more_than_1000_10000": number_entailment.NumEntailmentMoreThan1000To10000,
-    "number_entailment_less_than__1000_10000": number_entailment.NumEntailmentLessThan1000To10000,
-    "number_entailment_more_than_spelled_out__1000_10000": number_entailment.NumEntailmentMoreThan1000To10000SpelledOut,
-    "number_entailment_less_than_spelled_out__1000_10000": number_entailment.NumEntailmentLessThan1000To10000SpelledOut,
+    # "number_entailment_more_than_1000_10000": number_entailment.NumEntailmentMoreThan1000To10000,
+    # "number_entailment_less_than__1000_10000": number_entailment.NumEntailmentLessThan1000To10000,
+    # "number_entailment_more_than_spelled_out_1000_10000": number_entailment.NumEntailmentMoreThan1000To10000SpelledOut,
+    # "number_entailment_less_than_spelled_out_1000_10000": number_entailment.NumEntailmentLessThan1000To10000SpelledOut,
 
     
 
